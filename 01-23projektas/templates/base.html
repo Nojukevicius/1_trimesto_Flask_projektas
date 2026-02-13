@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> {{ title if title else "Flask Nav" }}</title>
+    <link rel="stylesheet" tapy="text/css" href="{{ url_for('static',filename='styles.css')}}">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="/" class="{% if active == 'home'%}active{%endif%}">Home</a>
+            <a href="/gameplay" class="{% if active == 'gameplay'%}active{%endif%}">Gameplay</a>
+            <a href="/about" class="{% if active == 'about'%}active{%endif%}">About</a>
+            <a href="/tips" class="{% if active == 'tips'%}active{%endif%}">Tips</a>
+            <a href="/history" class="{% if active == 'history'%}history{%endif%}">History</a>
+            <a href="/media" class="{% if active == 'media'%}media{%endif%}">Media</a>
+        </nav>
+    </header>
+    <main>
+        {% block content %} 
+        {% endblock %}
+    </main>
+    <footer>
+        <p><a href="https://www.youtube.com/@virtualfarmer9" class="no-decoration">zubzalpe</a>@gmail.com</p>
+        <a href="/easteregg" class="no-decoration"><p>©CodeAcadamy Kids©</p></a>
+    </footer>
+</body>
+</html>
